@@ -1,0 +1,377 @@
+/* OTHER THINGS TO DO...
+
+!!! 1. Vertical mages in gallery won't take up 100% of space at max-width: 768px, leaving gap on the right = !important = img width / not max-width
+!!! 2. How to make form fields responsive when won't take % values??? = !important = target div
+3. Tidy up the sum-numbers boxes in responsive
+4. Font sizes in responsive
+5. Responsive layout in iPhone 5
+6. BONUS Animating search bar
+7. BONUS How to make things animate as they come into view... JS?
+
+*/
+
+
+@media (max-width: 768px) {
+	/* ===== HEADER STYLES ===== */
+
+	header .row:first-child {
+		flex-direction: column;
+		align-items: center;
+	}	
+
+	.main-nav ul {
+		margin: 1em 0;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.main-nav li::before {
+		content: '';
+		background: #fff;
+		width: 100%;
+		height: 1px;
+	 	position: absolute;
+	 	left: 0;
+		top: 38px;
+		transform: scaleX(0);
+		transition: transform ease .5s, opacity ease .5s;
+	}
+
+	.main-nav li:hover::before {
+		opacity: 1;
+		transform: scaleX(1);
+		height: 1px;
+	}
+
+	.moontheme-contact {
+		line-height: 1.5;
+		order: 0;
+		transform: rotate(0deg);
+		margin: 0;
+		text-align: left;
+	}
+
+	header .row:nth-child(2) {
+		flex-direction: column;
+	}
+
+	.theme-change-buttons ul {
+		display: flex;
+	}
+
+	.theme-change-buttons li {
+		margin: 0 1em;
+	}
+
+	.moontheme-contact,
+	.theme-change-buttons {
+		margin-top: 1.5em;
+	}
+
+	/* ===== ABOUT STYLES ===== */
+
+	#about ul {
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	#about .card {
+		width: 80%;
+	}
+
+	#about .card:last-child {
+		margin-bottom: 5em;
+	}
+
+	/* ===== SERVICES STYLES ===== */
+
+	#services .card {
+		width: 50%;
+	}
+
+	.call-back-form select,
+	.call-back-form input[type="text"],
+	.call-back-form input[type="email"] {
+		width: 40em; /* Whhhyyy won't this work with %? */
+	}
+
+/* ===== SERVICES STYLES ===== */
+
+	#services-3 .row {
+		text-align: center;
+		justify-content: space-between;
+	}
+
+	#services-3 .intro-left {
+		flex-basis: 100%;
+		padding: 0 2em;
+	}
+
+	#services-3 .chart-container {
+		min-width: 100%;
+		padding: 0 2em;
+		margin: 2em 0 0;
+	}
+
+	.chart-container img {
+		min-width: 100%;
+	}
+
+/* ===== PROJECT STYLES ===== */
+
+	.gallery-box {
+		flex-basis: 50%;
+	}
+
+	.gallery-box-wide {
+		flex-basis: 100%;
+	}
+
+	.gallery-box:last-child {
+		order: -10;
+	}
+
+/* ===== PAGE STYLES ===== */
+
+	.logos-container li{
+		flex-basis: 50%;
+		padding: 2em 2.5em;
+	}
+
+	.logos-container img {
+		display: inline-block; /* For some reason, this centers the images */
+	}
+
+	.logos-container li:first-child img {
+		transform: scale(1);
+	}
+
+	.logos-container li:nth-child(2) img {
+		transform: scale(1);
+	}
+
+	.team-box figure {
+		height: 220px;
+	}
+
+	#page .social-container {
+		height: 220px;
+	}
+
+	#page li:nth-child(1) img {
+		transform: scale(2.6) translate(.3em, 1.6em); /* Y - Higher number moves item down */
+	}
+
+	#page li:nth-child(2) img{
+		transform: scale(1.2) translate(-.4em, .5em);
+	}
+
+	#page li:nth-child(3) img {
+		transform: scale(1.2) translate(0, .5em);
+	}
+
+
+/* ===== FOOTER STYLES ===== */
+
+	footer .row {
+		justify-content: center;
+	}
+
+	footer .col-1 {
+		text-align: center;
+		align-items: center;
+	}
+
+	footer .col-1 {
+		flex-basis: 100%;
+	}
+
+	footer .col-2 {
+		flex-basis: 50%;
+		padding: 0 2em;
+	}
+
+	footer .col-3 {
+		flex-basis: 50%;
+		padding: 0 2em;
+	}
+
+	footer h4 {
+		margin: 5em 0 1em;
+	}
+
+	.biz-phone-email-container div {
+		margin-left: 3em;
+		margin-right: 3em;
+	}
+
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+@media (max-width: 480px) {
+/* ===== HEADER STYLES ===== */
+
+	h1 {
+		font-size: 4rem;
+	}
+
+/* ===== ABOUT STYLES ===== */
+	#about .card {
+		width: 100%;
+	}
+
+/* ===== SERVICES STYLES ===== */
+
+	#services .card {
+		width: 90%;
+	}
+
+	#services-3 .chart-container {
+		min-width: 100%;
+		padding: 0 0;
+		margin: 2em 0 0;
+	}
+
+	#services-3 .row {
+		text-align: center;
+		justify-content: center;
+	}
+
+	#services-3 .intro-left {
+		flex-basis: 100%;
+		padding: 0 1em;
+	}
+
+	.card p {
+		text-align: center;
+	}
+
+	.call-back-form select,
+	.call-back-form input[type="text"],
+	.call-back-form input[type="email"] {
+		width: 30em; /* Whhhyyy won't this work with %? */
+	}
+
+	#services li.card {
+		justify-content: center;
+		align-items: center;
+	}
+
+	.sum-number-container li {
+		padding: 0 1.5em;
+	}
+
+/* ===== PROJECT STYLES ===== */
+
+	.gallery-btn {
+		width: 50%;
+	}
+
+	.gallery-box { /* Why does this break??? */
+		flex-basis: 100%;
+	}
+
+/* ===== PAGE STYLES ===== */
+
+	li.team-box {
+		max-width: 100%;
+	}
+
+	.team-container {
+		margin-top: 3em;
+	}
+
+	.team-box figure {
+		height: 325px;
+	}
+
+	#page .social-container {
+		height: 325px;
+	}
+	
+	#page li:first-child {
+		margin-left: .6em;
+	}
+
+	#page li:nth-child(1) img {
+		transform: scale(2) translate(.3em, 2em); /* Y - Higher number moves item down */
+	}
+
+	.logos-container li {
+		flex-basis: 80%;
+	}
+
+	.skills-box {
+		flex-basis: 100%;
+		padding: .5em;
+	}
+
+/* ===== BLOG STYLES ===== */
+
+	li.blog-post {
+		flex-basis: 100%;
+	}
+
+/* ===== CONTACT STYLES ===== */
+
+	#contact .intro-left {
+		text-align: center;
+		flex-basis: 100%;
+	}
+
+	#contact .intro-left:nth-child(2) {
+		margin-top: 3em;
+	}
+
+	#contact .social-icons-circle.row {
+		justify-content: center;
+	}
+
+	.rss-subscriber-form.row {
+		flex-direction: column;
+	}
+
+	.rss-subscriber-form input[type="email"] {
+		margin-top: -1em; /* All negative values move it up the same amount... why??? */
+	}
+
+/* ===== FOOTER STYLES ===== */
+
+	footer .col {
+		text-align: center;
+	}
+
+	footer .col-2 {
+		flex-basis: 100%;
+		align-items: center;
+	}
+
+	footer .col-3 {
+		flex-basis: 100%;
+	}
+		
+	.col-2 h4 {
+		margin: 7em 0 1em;
+	}
+
+	.tw-user-container p:nth-child(2) {
+		text-align: left;
+	}
+
+	.opening {
+		padding: 0 3em;
+	}
+
+	.opening-day {
+		text-align: left;
+	}
+
+	.biz-phone-email-container.row {
+		flex-direction: column;
+		align-items: center;
+	}
+
+}
